@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<robot name="small_cube">
+  <link name="cube">
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.02" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.02"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.1"/> <!-- Change the size as needed -->
+      </geometry>
+      <material name="Wood">
+        <color rgba="0.8 0.52 0.25 1"/> <!-- Brown color -->
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint" type="fixed">
+    <parent link="world"/>
+    <child link="cube"/>
+    <origin xyz="0 0 0.05" rpy="0 0 0"/> <!-- Position the cube above ground -->
+  </joint>
+</robot>
+
